@@ -1,0 +1,55 @@
+Restas Sucesiva
+Esta función se emplea con claves numéricas entre las que existen huecos de tamaño conocido, obteniéndose direcciones consecutivas. Un ejemplo serían los alumnos de ingeniería en sistemas que entraron en el año 2005 sus números de control son consecutivos y está definido el número de alumnos.
+
+05210800 -05210800 → 0
+05210801 -05210800 → 1
+05210802 -05210800 → 2
+…
+05210899 -05210800 → 99
+
+
+
+
+Aritmética Modular
+El índice de un número es resto de la división de ese número entre un número N prefijado, preferentemente primo. Los números se guardarán en las direcciones de memoria de 0 a N-1. Este método tiene el problema de que dos o más elementos pueden producir el mismo residuo y un índice puede ser señalado por varios elementos. A este fenómeno se le llama colisión. Si el número N es el 7, los números siguientes quedan transformados en:
+
+1679 → 6
+4567 → 3
+8471 → 1
+0435 → 1
+5033 → 0
+Mientras más grande sea número de elementos es mejor escoger un número primo mayor para seccionar el arreglo en más partes. El número elegido da el número de partes en que se secciona el arreglo, y las cada sección está compuesta por todos los elementos que arrojen el mismo residuo, y mientras más pequeñas sean las secciones la búsqueda se agilizara más que es lo que nos interesa.
+
+
+
+
+Mitad del Cuadrado
+Consiste en elevar al cuadrado la clave y coger las cifras centrales. Este método también presenta problemas de colisión.
+
+709^2=502681 → 26
+456^2=207936 → 79
+105^2=011025 → 10
+879^2=772641 → 26
+619^2=383161 → 31
+
+
+
+
+Truncamiento
+Consiste en ignorar parte del número y utilizar los elementos restantes como índice. También se produce colisión. Por ejemplo, si un número de 7 cifras se debe ordenar en un arreglo de elementos, se pueden tomar el segundo, el cuarto y el sexto para formar un nuevo número:
+
+5700931 → 703
+3498610 → 481
+0056241 → 064
+9134720 → 142
+5174829 → 142
+
+
+Plegamiento
+Consiste en dividir el número en diferentes partes, y operar con ellas (normalmente con suma o multiplicación). También se produce colisión. Por ejemplo, si dividimos el número de 7 cifras en 2, 2 y 3 cifras y se suman, dará otro número de tres cifras (y si no, se toman las tres últimas cifras):
+
+5700931»> 57 + 00 + 931 = 988
+3498610 → 34 + 98 + 610 = 742
+0056241 → 00 + 56 + 241 = 297
+9134720 → 91 + 34 + 720 = 845
+5174929 → 51 + 74 + 929 = 1054
